@@ -7,7 +7,6 @@ This project is a dynamic web application built with **Next.js**, offering a sma
 
 - **Responsive Carousel**: A card-based carousel to scroll through book chapters with intuitive navigation and mouse scroll support.
 - **Dark Mode**: Toggle between light and dark mode, with smooth transitions and saved user preferences.
-- **Bookmarking**: Bookmark individual chapters, unique to each book.
 - **API Integration**: Dynamically fetch and display book data from an API, including images, audio files, and descriptions.
 - **Optimized for Performance**: Lazy loading of images and optimized asset management.
 - **Accessibility**: Supports keyboard navigation and accessible design principles.
@@ -61,7 +60,6 @@ http://localhost:3000
 ### Book Carousel
 - Navigate through different books using the carousel. Each book displays its chapters in card format.
 - Use the mouse scroll or arrows to scroll through the chapters.
-- Bookmark chapters in one book without affecting bookmarks in others.
 
 ---
 
@@ -70,7 +68,6 @@ http://localhost:3000
 ```bash
 ├── components/
 │   ├── Carousel.js         # Carousel component
-│   ├── Navbar.js           # Navigation bar for selecting books
 │   ├── XPContext.js        # Context for global state (XP system)
 │   ├── ChapterContexts.js  # Context for chapter data management
 │
@@ -78,13 +75,11 @@ http://localhost:3000
 │   └── index.js            # Main home page for the project
 │
 ├── public/                 # Public assets like images and icons
+    └── lock-icon-white.svg
 │
 ├── style/
-│   ├── global.css          # Global styles, including light and dark mode
-│   ├── home.module.css     # Component-specific styles for home page
 │   ├── carousel.css        # Styles for carousel component
-│
-├── utils/                  # Utility functions
+│── global.css              # Global styles, including light and dark mode
 │
 ├── .gitignore              # Files to ignore in version control
 ├── README.md               # Project documentation
@@ -135,9 +130,7 @@ This project is licensed under the MIT License. You are free to use, modify, and
 ## Contact
 
 If you have any questions or issues, feel free to contact me at:
-- **GitHub**: [your-username](https://github.com/your-username)
-- **Email**: your-email@example.com
+- **GitHub**: [parth9643]([https://github.com/your-username](https://github.com/parth9643])
+- **Email**: parthshukla9717830829@gmail.com
 
----
 
-By following this README, you can easily set up and understand the structure of the smart book carousel project, as well as contribute to its development.
