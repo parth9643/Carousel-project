@@ -130,7 +130,7 @@ This project is licensed under the MIT License. You are free to use, modify, and
 ## Contact
 
 If you have any questions or issues, feel free to contact me at:
-- **GitHub**: [parth9643]([https://github.com/your-username](https://github.com/parth9643])
+- **GitHub**: [parth9643](https://github.com/parth9643)
 - **Email**: parthshukla9717830829@gmail.com
 
 
