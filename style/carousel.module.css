@@ -1,0 +1,229 @@
+
+.carouselWrapper {
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.embla {
+  overflow: hidden;
+  width: 100%;
+}
+
+.embla__container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.embla__slide {
+  flex: 0 0 20%;
+  margin-right: 20px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.chapterCard {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: transform 0.5s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.chapterImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.chapterInfo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  background-color: rgba(25, 28, 31, 0.77);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.chapterTitle {
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(229, 232, 234);
+}
+
+.chapterInfo::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  margin-bottom: 8px;
+}
+
+
+.hoverLeft {
+  transform: rotateY(30deg);
+}
+
+.hoverRight {
+  transform: rotateY(-30deg);
+}
+
+.bookSelector {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.bookButton {
+  background-color: var(--button-bg, #007bff); 
+  color: var(--text-color, #fff); 
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.bookButton:hover {
+  background-color: var(--button-hover-bg, #0056b3); 
+  transform: translateY(-3px);
+}
+
+.activeButton {
+  background-color: var(--active-button-bg, #28a745); 
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  transform: scale(1.05);
+}
+
+.bookButton:focus,
+.bookButton:active {
+  outline: none;
+  transform: translateY(0);
+}
+
+/*Dark Mode */
+[data-theme='dark'] .bookButton {
+  background-color: var(--button-bg, #1e88e5);
+  color: var(--text-color, #fff);
+}
+
+[data-theme='dark'] .bookButton:hover {
+  background-color: var(--button-hover-bg, #1565c0);
+}
+
+[data-theme='dark'] .activeButton {
+  background-color: var(--active-button-bg, #66bb6a);
+}
+
+
+.lockOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+}
+
+.lockOverlay img {
+  width: 50px;
+  height: 50px;
+}
+
+/*Animations*/
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.5s ease;
+}
+
+.darkMode .chapterCard {
+  background-color: #1e1e1e;
+}
+
+.darkMode .chapterInfo {
+  background-color: rgba(40, 40, 40, 0.77);
+}
+
+.darkMode .chapterTitle {
+  color: #e0e0e0;
+}
+
+.darkMode .chapterInfo::before {
+  background-color: #e0e0e0;
+}
+
+.darkMode .lockOverlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.darkMode .embla__slide {
+  margin-right: 20px;
+}
+
+
+/* Tablet View */
+@media (max-width: 768px) {
+  .carouselWrapper {
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .embla__slide {
+    flex: 0 0 40%;
+    margin-right: 20px;
+  }
+
+  .chapterCard {
+    margin-bottom: 20px;
+  }
+}
+/* Phone View */
+@media (max-width: 480px) {
+  .embla__slide {
+    flex: 0 0 60%;
+    margin-right: 20px;
+  }
+
+  .chapterInfo {
+    padding: 8px;
+  }
+}
+

@@ -1,0 +1,82 @@
+/* Default->Light Mode */
+:root {
+  --background-color: #fff;
+  --text-color: #000;
+  --button-bg: #007bff;
+  --button-hover-bg: #0056b3;
+  --active-button-bg: #28a745;
+  --chapter-card-bg: #fff;
+  --chapter-info-bg: rgba(25, 28, 31, 0.77);
+  --chapter-title-color: rgb(229, 232, 234);
+}
+
+/* Dark Mode */
+[data-theme='dark'] {
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --button-bg: #1e88e5;
+  --button-hover-bg: #1565c0;
+  --active-button-bg: #66bb6a;
+  --chapter-card-bg: #1e1e1e;
+  --chapter-info-bg: rgba(40, 40, 40, 0.77);
+  --chapter-title-color: #e0e0e0;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Dark Mode Toggle Button */
+.toggleButton {
+  background-color: var(--toggle-bg, #f1f1f1);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.toggleButton:hover {
+  transform: scale(1.1);
+}
+
+.toggleButton:focus {
+  outline: none;
+}
+
+.toggleIcon {
+  font-size: 24px;
+  color: var(--icon-color, #000);
+}
+
+/* Dark Mode Styles for Toggle Button */
+[data-theme='dark'] .toggleButton {
+  background-color: var(--toggle-bg, #333);
+}
+
+[data-theme='dark'] .toggleIcon {
+  color: var(--icon-color, #fff); 
+}
+
+@media (max-width: 480px) {
+  .toggleButton {
+    top: auto;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .toggleButton {
+    position: fixed;
+  }
+}
+
